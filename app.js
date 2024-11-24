@@ -2,25 +2,32 @@ const express = require('express')
 
 const app = express()
 
+app.set('view engine', 'ejs')
+
 app.listen(3000)
 
 app.get('/', (req, res) => {
-    res.sendFile('./views/index.html', {root:__dirname});
+    const blogs =[
+        {title: 'Yoshi finds eggs', snippet:'Good for him'},
+        {title: 'Mario finds eggs', snippet:'Also Good for him'},
+        {title: 'How to defeat Boss Level 1', snippet:'eh gets harder in DK'},
+    ]
+    res.render('index', {title: "Home Page", blogs})
 
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile('./views/about.html', {root:__dirname});
+    res.render('about', {title: "About Page"})
 
 });
 
-app.get('/about-us', (req, res) => {
-    res.redirect('/about')
+app.get('/blogs/create', (req, res) => {
+    res.render('create', {title: "Create Blog"})
 
 });
 
 app.use ((req, res) => {
-    res.status('404').sendFile('./views/404.html', {root:__dirname});
+    res.status(404).render('404', {title: "Page Not Found"})
 
 });
 
