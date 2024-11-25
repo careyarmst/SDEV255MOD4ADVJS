@@ -1,28 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width-device-width, initial-scale 1.0">
-<title>Simplify | <%= title %></title>
-
-</head>
+  <%- include ('./partials/head.ejs') %>
 <body>
 
-<nav>
-  <div class="site title">
+  <%- include ('./partials/nav.ejs') %>
 
-    <a href="/"><h1>Simplify</h1></a>
-    <p>A Net Ninja Tutorial Site</p>
-  </div>
-  <ul>
-    <li><a href="/">Blogs</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/blogs/create">New Blog</a></li>
-  </ul>
-</nav>
-
-<div class="blogs content">
+  <div class="blogs content">
   <h2>All Blogs</h2>
   <% if (blogs.length > 0) { %>
     <% blogs.forEach(blog => { %>
@@ -33,9 +16,7 @@
 </div>
 
 
-<footer>
-  Copyright &copy; 2020 Pacific Trails Resort<br>
-  <a href="mailto:carey@armstrong.com">carey@armstrong.com</a>
-</footer>
+
+<%- include ('./partials/footer.ejs') %>
 </body>
 </html>

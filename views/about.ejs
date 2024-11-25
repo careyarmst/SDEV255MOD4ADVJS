@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width-device-width, initial-scale 1.0">
-<title>Simplify | <%= title %> </title>
+<%- include ('./partials/head.ejs') %>
 
-</head>
 <body>
-<nav>
-  <div class="site title">
-    <a href="/"><h1>Simplify</h1></a>
-    <p>A Net Ninja Tutorial Site</p>
-  </div>
-  <ul>
-    <li><a href="/">Blogs</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/blogs/create">New Blog</a></li>
-  </ul>
-</nav>
+
+<%- include ('./partials/nav.ejs') %>
 
 <div class="blogs content">
   <p>Put some stuff here some stuff here some stuff here</p>
@@ -26,9 +13,6 @@
   <p>Put some stuff here some stuff here some stuff here</p>
 </div>
 
-<footer>
-  Copyright &copy; 2020 Pacific Trails Resort<br>
-  <a href="mailto:carey@armstrong.com">carey@armstrong.com</a>
-</footer>
+<%- include ('./partials/footer.ejs') %>
 </body>
 </html>
